@@ -1,0 +1,239 @@
+\documentclass[10pt,a4paper,ragged2e,withhyper]{AltaCV/altacv}
+
+\usepackage{hyperref}
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+%% AltaCV uses the fontawesome and academicon fonts
+%% and packages.
+%% See texdoc.net/pkg/fontawecome and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Carlito}
+\else
+  % If using pdflatex:
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage[default]{lato}
+\fi
+\usepackage{xcolor}
+
+% Change the colours if you want to
+\definecolor{RoyalBlue}{HTML}{2f688d}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{heading}{RoyalBlue}
+\colorlet{accent}{RoyalBlue}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+% \addbibresource{sample.bib}
+
+
+\begin{document}
+\name{Can H. Tartanoglu}
+\tagline{Agile Researcher \& Engineer | Ph. D. candidate in Medical Computation Neurosciences}
+\photoR{2.8cm}{profile}
+
+\personalinfo{
+	% Not all of these are required!
+	\location{Berlin, Germany}
+	\email{canhtart@gmail.com}
+	\phone{+49 176 64782175}
+	%% \homepage{www.homepage.com}
+	\twitter{@caniko}
+	\linkedin{canhtartanoglu}
+	\github{caniko}
+	\orcid{0000-0001-5167-0678}
+	%% You can add your own arbitrary detail with
+	%% \printinfo{symbol}{detail}[optional hyperlink prefix]
+	% \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+	%% Or you can declare your own field with
+	%% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+	% \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+	% \gitlab{your_id}
+	%%
+	%% For services and platforms like Mastodon where there isn't a
+	%% straightforward relation between the user ID/nickname and the hyperlink,
+	%% you can use \printinfo directly e.g.
+	% \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+	%% But if you absolutely want to create new dedicated info fields for
+	%% such platforms, then use \NewInfoField* with a star:
+	% \NewInfoField*{mastodon}{\faMastodon}
+	%% then you can use \mastodon, with TWO arguments where the 2nd argument is
+	%% the full hyperlink.
+	% \mastodon{@username@instance}{https://instance.url/@username}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+\cvsection{Software experience}
+
+	\cvevent{Software engineer and researcher}{On-Site at Haber Labaratory}{Aug 2020 -- Present}{Berlin, Germany}
+		\begin{itemize}
+			\item Leading the Synapse DB project. Infrastructure DevOps, full stack design and implementation, and executive decisions
+			\item Assisted with automated animal behavior analysis in other Ph. D. projects
+			\item Guided and assisted juniors and interns
+		\end{itemize}
+
+	\divider
+
+	\cvevent{Open Source project author}{Remote}{May 2018 -- Present}{Oslo, Norway}
+		FOSS projects in Python and Rust, explore my projects on \href{https://github.com/caniko}{GitHub}.
+
+	\divider
+
+	\cvevent{Software Engineer}{On-Site at Mnemonic}{May 2020 -- Aug 2020}{Oslo, Norway}
+		Created the first product of the company, which is a Tetris inspired PvP (player VS player) game.
+
+	\divider
+
+	\cvevent{Software Engineer}{Remote at Reshape Labs}{Feb 2019 -- Aug 2020}{}
+		\begin{itemize}
+			\item System design, company representative, and public speaker
+			\item Created the first product of the company, which is a Tetris inspired game that is player VS player.
+		\end{itemize}
+
+	\divider
+
+	\cvevent{Member of Group-EDB}{On-Site at the communication department in the Norwegian Student-community (DNS)}{March 2016 -- May 2017}{Oslo, Norway}
+		Introduced to virtual machine infrastructure monitoring, and Linux ecosystem.
+
+\cvsection{A Day of My Life}
+	% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+	% \wheelchart{outer radius}{inner radius}{
+		% comma-separated list of value/text width/color/detail}
+	% Some ad-hoc tweaking to adjust the labels so that they don't overlap
+	\hspace*{-2em}  %% quick hack to move the wheelchart a bit left
+	\wheelchart{1.5cm}{0.5cm}{
+		10/13em/accent!30/Sleeping \& dreaming about disruption,
+		25/9em/accent!60/Read write and correct scientific articles,
+		5/11em/accent!10/\footnotesize\\[1ex]Guide and mentor,
+		20/11em/accent!40/Spend time with my wife and family,
+		5/8em/accent!20/Train for ultimate-marathon (73km),
+		30/9em/accent/Engineer software and infrastructure,
+		5/8em/accent!20/Play video games
+	}
+
+\newpage
+
+\cvsection{Bioscience experience}
+
+	\cvevent{Researcher for Academic projects in Neuroscience}{On-Site at the University of Oslo (UiO)}{March 2015 -- April 2020}{Oslo, Norway}
+		\begin{itemize}
+			\item The Prydz Laboratory: Worked with and maintained MDCK cells for glycobiology research.
+			\item The Hafting Laboratory: Compute the time a mouse spends in the region of interest, created a new Python package DeepLabCutAnalysis.
+			\item The Morland Laboratory (Institute of Pharmacology): Extraction of kinematic features from experimental video recordings of mice with induced stroke.
+		\end{itemize}
+
+	\divider
+
+	\cvevent{Teaching Assistant in Bioscience courses at Bachelor level}{University of Oslo}{March 2016 -- Dec 2019}{Oslo, Norway}
+		Bachelor courses including physiology, biochemistry, and computational modeling
+
+	\divider
+
+	\cvevent{Laboratory Technician for NoPSC in Melum Group}{Oslo University Hospital}{Sept 2016 -- Nov 2017}{Oslo, Norway}
+		Worked with genotyping of mice, including isolation of DNA and amplification of target genes.
+
+	\divider
+
+	\cvevent{Intern at the Centre for Integrative Neuroplasticity}{University of Oslo}{Aug 2016 -- June 2017}{Oslo, Norway}
+		Performed surgeries, partook in meetings, and preliminary work for Master's project
+
+	\switchcolumn
+
+	\cvsection{Life Philosophy}
+		\begin{quote}
+			``Embrace a holistic approach that integrates diverse perspectives and experiences``
+		\end{quote}
+
+	\cvsection{Achievements}
+	
+		\cvachievement{\faTrophy}{FOSS project founder, Oslo, Norway}{BiKiPy, a Python package, for analysing animal movement in behaviour experiments, four upcoming citations.}
+		
+		\cvachievement{\faTrophy}{Athletics}{Ran Toughest ORC, which is an 8 km run with challenging obstacles two times, 2016 and 2018. Oslo half-marathon in 2021.}
+
+	\cvsection{Interests}
+
+		\cvtag{Mentoring}
+		\cvtag{Blockchain}
+		\cvtag{Neuroscience}
+		\cvtag{Engineering}
+		\cvtag{Nutrition}
+		\cvtag{Ultimate Frisbee}
+		\cvtag{Windsurfing}
+		\cvtag{Running}
+		\cvtag{Fitness}
+		
+	\cvsection{Skills}
+
+		\cvskill{Python}{5}
+		\cvskill{Rust}{2.5}
+		\cvskill{Latex}{3.5}
+		\cvskill{FastAPI-OpenAPI}{4.5}
+		\cvskill{Flutter/Dart}{4}
+
+		\divider
+
+		\cvskill{Arch Linux}{4}
+		\cvskill{Kubernetes}{3.5}
+		\cvskill{Cassandra DB}{3.5}
+		\cvskill{PostgreSQL}{3}
+
+	\cvsection{References}
+	
+		\cvref{Joakim von Brandis}{joakim@mnemonic.no}{Head of development, Mnemonic}
+
+		\cvref{A/Prof. Torkel Hafting}{torkel.hafting@gmail.com}{Medical faculty, University of Oslo}
+
+		\cvref{Prof. Espen Melum}{espen.melum@medisin.uio.no}{Medical faculty, University of Oslo}
+
+	\cvsection{Education}
+	
+		\cvevent{Ph.D. Candidate}{German Center for Neurodegenerative Diseases (DZNE)}{Aug 2020 -- Present}{Berlin, Germany}
+			Thesis title: "SynDB: Federated data platform for high-resolution microscopy data" \\
+			Supervisors: Dr. Matthias Haberl, and Dr. Silvia Viana da Silva
+
+		\divider
+
+		\cvevent{Master of Science in Physiology}{University of Oslo}{July 2017 -- Dec 2019}{Oslo, Norway}
+			Thesis title: "Markerless 3D tracking and reconstruction of subjects with multiple stereo cameras" \\
+			Supervisors: A/Prof. Torkel Hafting, Dr. Alessio Buccino, Malin Benum Roe
+
+		\divider
+		
+		\cvevent{Bachelor of Science in molecular biology and biochemistry}{University of Oslo}{July 2014 -- June 2017}{Oslo, Norway}
+
+	\cvsection{Languages}
+
+		\cvskill{English}{5}
+		\cvskill{Norwegian}{4.5}
+		\cvskill{Turkish}{4.5}
+		\cvskill{German}{2}
+
+\end{paracol}
+
+\end{document}
