@@ -1,0 +1,47 @@
+name: Generic CV
+
+on:
+  push:
+    branches: [trunk]
+    tags: ['v*']
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+
+      - name: Build generic CV
+        run: nix build .#cv --no-link --no-update-lock-file
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+
+      - name: Build generic CV PDF
+        run: |
+          output=$(nix build .#cv --no-link --no-update-lock-file --print-out-paths)
+          mkdir -p dist
+          cp "$output/cv.pdf" dist/cv.pdf
+
+      - name: Publish GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/cv.pdf

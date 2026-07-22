@@ -1,0 +1,323 @@
+% Shared candidate facts and reusable CV sections.
+%
+% Pink Raven evidence bank:
+% - User-provided: candidate solo-designed and implemented the platform.
+% - Repo-backed at /data/nvme0/can/Projects/pink-raven: rights-aware
+%   architecture precedent library; Rust/Axum/Postgres/pgvector service;
+%   semantic search, embedding-similarity suggestions, classifier/reranker
+%   hooks, outbox worker, data-residency controls, NixOS module, mdBook
+%   product/architecture/operations docs.
+
+\newcommand{\ContactEnglish}{%
+  +49 176 64782175~~|~~Berlin, Germany~~|~~\href{mailto:caniko@tutanota.com}{caniko@tutanota.com}\cvContactBreak
+  Norwegian citizen / EEA work authorization~~|~~%
+  \href{https://linkedin.com/in/canhtartanoglu}{LinkedIn}~~|~~%
+  \href{https://github.com/caniko}{GitHub}~~|~~%
+  \href{https://codeberg.org/caniko}{Codeberg}
+}
+
+\newcommand{\ContactNorwegian}{%
+  +49 176 64782175~~|~~Berlin, Tyskland; s{\o}ker Oslo~~|~~\href{mailto:caniko@tutanota.com}{caniko@tutanota.com}\cvContactBreak
+  Norsk statsborger / E{\O}S-arbeidstillatelse~~|~~%
+  \href{https://linkedin.com/in/canhtartanoglu}{LinkedIn}~~|~~%
+  \href{https://github.com/caniko}{GitHub}~~|~~%
+  \href{https://codeberg.org/caniko}{Codeberg}
+}
+
+\newcommand{\EducationEnglish}{%
+  \Needspace{7\baselineskip}
+  \section{Education}
+  \eduentry{Ph.D. Candidate}{DZNE / Charit\'{e}}{Berlin, Germany}{Aug 2020 -- Present}\cvEntryNoteBreak
+  {\small Thesis: ``\href{https://syndb.xyz}{SynDB}: Federated data platform for high-resolution microscopy data (100+ TB, 15 facilities)''}
+
+  \cvEducationBreak
+  \Needspace{0\baselineskip}
+  \eduentry{M.Sc.\ in Physiology}{University of Oslo}{Oslo, Norway}{July 2017 -- Dec 2019}\cvEntryNoteBreak
+  {\small Thesis: ``Markerless 3D tracking and reconstruction of subjects with multiple stereo cameras''}
+}
+
+\newcommand{\EducationNorwegian}{%
+  \section{Utdanning}
+  \eduentry{Ph.d.-kandidat}{DZNE / Charit\'{e}}{Berlin, Tyskland}{Aug 2020 -- n{\aa}}\cvEntryNoteBreak
+  {\small Avhandling: ``\href{https://syndb.xyz}{SynDB}: f{\o}derert dataplattform for h{\o}yoppl{\o}selig mikroskopidata (100+ TB, 15 fasiliteter)''}
+
+  \cvEducationBreak
+  \Needspace{3\baselineskip}
+  \eduentry{M.Sc.\ i fysiologi}{Universitetet i Oslo}{Oslo, Norge}{Juli 2017 -- Des 2019}\cvEntryNoteBreak
+  {\small Masteroppgave: ``Markerless 3D tracking and reconstruction of subjects with multiple stereo cameras''}
+}
+
+\newcommand{\EnglishExperience}{%
+  \section{Professional Experience}
+  \jobentry{Senior Software Engineer - Lead}{Clovr Labs, Remote}{Aug 2023 -- Present}{}
+  \begin{cvitems}
+    \item Lead Solana analytics and API architecture for blockchain risk data and greenfield R\&D
+    \item Built \href{https://scoremycrypto.com/}{ScoreMyCrypto} \href{https://scoremycrypto.com/api/v4/docs\#}{B2B API} backends for Bitcoin and Solana risk forensics
+    \item Shipped Rust/Tokio ETL services with backpressure and graceful shutdown on Docker/Kubernetes, backed by CI/CD
+    \item Integrated and operated Geth/Reth and LND/Bitcoin Core payment flows, handling nonce, EIP-1559 fees, replacement, configurable confirmations, mempool/RPC edge cases, canonical-hash reorg recovery, retries, routing/liquidity failures, restarts, and reconciliation; diagnosed client/node issues through RPC, logs, channel state, and on-chain analysis; tested Polar scenarios and used Rust-based Foundry tooling for smart contracts
+    \item Built real-time Solana base-layer ingestion with slot/commitment tracking, reconnects, backfills, deduplication, fork correction, checkpoint recovery, and backpressure; optimized an approximately 200 TB production ClickHouse cluster for derived-fact storage
+  \end{cvitems}
+
+  \cvRoleBreak
+  \jobentry{Software Engineer and Researcher}{Haberl Laboratory, Berlin}{Aug 2020 -- Aug 2023}{}
+  \begin{cvitems}
+    \item Built \href{https://syndb.xyz}{SynDB} in Rust (Tokio, Axum, Arrow Flight, Kameo), federating 100+ TB across 15 EM facilities
+    \item Designed data-sovereign federation, concurrent ingestion, provenance, and partial-failure handling for independently operated sites
+    \item Delivered behavior-analysis tooling for three Ph.D.\ projects; mentored junior engineers and interns
+  \end{cvitems}
+
+  \cvRoleBreak
+  \jobentry{Software Engineer}{Mnemonic, Oslo}{May 2020 -- Aug 2020}{}
+  \begin{cvitems}
+    \item Helped establish an information-security tooling team and delivered security metrics tooling for internal and client teams
+  \end{cvitems}
+}
+
+\newcommand{\EnglishProjects}{%
+  \section{Selected Engineering Projects}
+  \jobentry{Open-source Project Author}{Independent, Remote}{May 2018 -- Present}{}
+  \begin{cvitems}
+    \item Authored 180+ GitHub pull requests across Nixpkgs, Kameo, Bevy, LLVM, libp2p, and scientific Python; maintains Rust/Nix/Python projects on \href{https://github.com/caniko}{GitHub} and \href{https://codeberg.org/caniko}{Codeberg}
+    \item Designed and built Pink Raven as sole developer: a rights-aware reference search platform with semantic retrieval, embedding/reranking workflows, pgvector, data-residency controls, and NixOS deployment
+    \item Built Mnemo, a Rust AI-agent memory system combining temporal memory, vector/graph search, conversation mining, MCP, and integration hooks
+    \item Built QueryFabric, a Rust SQL/SyQL compiler and data-portability layer; validated export/import, tamper detection, replay, and rollback in end-to-end NixOS VM tests
+  \end{cvitems}
+
+  \cvRoleBreak
+  \jobentry{Reproducible Systems Infrastructure}{Independent, Remote}{}{}
+  \begin{cvitems}
+    \item Designed reusable Nix/Rust infrastructure across Fleetix (typed fleet topology), Infernix (declarative AI/ML inference), and rs-harbor/nix-crossbow (toolchains and QEMU-free cross-compilation)
+    \item Built nix-provenance for declarative OIDC provisioning with Kanidm/Rauthy, short-lived tokens, and secret-safe NixOS integration
+  \end{cvitems}
+
+  \cvRoleBreak
+  \jobentry{AI-assisted Developer Tooling}{Independent, Remote}{}{}
+  \begin{cvitems}
+    \item Built visual-rubric, a screenshot and interaction-rubric runner with parallel workers, batch reports, retries, and optional CI gating
+    \item Developed reusable workflows for repository audits, Nix/Rust project setup, CI, releases, deployment, and cross-project maintenance
+  \end{cvitems}
+
+  \cvRoleBreak
+  \jobentry{Indie Game Developer}{Self-employed, Remote}{Nov 2025 -- Present}{}
+  \begin{cvitems}
+    \item Building Chessbender, a cross-platform Rust/Bevy tactical game with replay, LAN/P2P networking, dice-commitment fairness, and state-hash desync detection
+    \item Developing Kingpin, a Rust/Bevy card game targeting Web/WASM and Steam
+  \end{cvitems}
+
+  \cvRoleBreak
+  \jobentry{Scientific Software}{Independent / Academic}{}{}
+  \begin{cvitems}
+    \item Built and maintained typed NumPy/Pydantic models, Python/Rust Poisson-reconstruction bindings, media/frame extraction, mesh-processing, and biological-kinematics tooling
+    \item Developed markerless multi-camera 3D tracking and reconstruction for an M.Sc.\ thesis and reusable behavior-analysis workflows for neuroscience research
+  \end{cvitems}
+}
+
+\newcommand{\EnglishProtocolExperience}{%
+  \section{Professional Experience}
+  \jobentry{Senior Software Engineer - Lead}{Clovr Labs, Remote}{Aug 2023 -- Present}{}
+  \begin{cvitems}
+    \item Lead Solana analytics and API architecture for blockchain risk data and greenfield R\&D
+    \item Built \href{https://scoremycrypto.com/}{ScoreMyCrypto} \href{https://scoremycrypto.com/api/v4/docs\#}{B2B API} backends for Bitcoin and Solana risk forensics
+    \item Shipped production Rust/Tokio ETL with backpressure and graceful shutdown on Docker/Kubernetes, backed by CI/CD
+    \item Integrated and operated Geth and Reth execution clients for payment-service reliability: transaction lifecycle, nonce coordination, gas estimation, EIP-1559 fee handling, replacement, configurable confirmation thresholds, and RPC/process-failure recovery
+    \item Added mempool/RPC safeguards for nonce-too-low, replacement-underpriced, already-known, delayed propagation, stale pending state, and temporary node desynchronization; tracked canonical block hashes for reorg-aware resubmission and recovery
+    \item Monitored and debugged Geth internals and node health across peer count, synchronization lag, chain head, RPC latency, transaction-pool behavior, and configuration
+    \item Integrated LND over gRPC with Bitcoin Core across node, wallet, peer, channel, invoice, and payment lifecycles; implemented retries, routing/liquidity checks, duplicate/expiry protection, restart recovery, and state reconciliation
+    \item Diagnosed LND and Bitcoin Core through RPC responses, client logs, channel state, and on-chain transaction analysis; delivered configuration/integration fixes; tested Bitcoin Core and multiple LND nodes in Polar across multi-hop routing, constrained liquidity, offline peers, fee failures, delayed confirmations, restarts, and channel closures
+    \item Built real-time Solana base-layer ingestion with slot/commitment tracking, reconnects, backfills, deduplication, fork correction, checkpoint recovery, and ingestion backpressure; designed and optimized an approximately 200 TB production ClickHouse cluster for derived-fact storage with partitioning, ordering keys, batched inserts, materialized views, compression, TTLs, deduplication, merge stability, and query-performance tuning
+  \end{cvitems}
+
+  \cvRoleBreak
+  \jobentry{Software Engineer and Researcher}{Haberl Laboratory, Berlin}{Aug 2020 -- Aug 2023}{}
+  \begin{cvitems}
+    \item Built \href{https://syndb.xyz}{SynDB} in Rust (Tokio, Axum, Arrow Flight, Kameo), federating 100+ TB across 15 EM facilities
+    \item Designed data-sovereign federation, concurrent ingestion, provenance, and partial-failure handling for independently operated sites
+    \item Delivered behavior-analysis tooling for three Ph.D.\ projects; mentored junior engineers and interns
+  \end{cvitems}
+
+}
+
+\newcommand{\EnglishProtocolProjects}{%
+  \section{Selected Systems Engineering}
+  \jobentry{Distributed Storage}{Hands-on Experience}{}{}
+  \begin{cvitems}
+    \item Worked with TiKV, a distributed database built on RocksDB
+  \end{cvitems}
+
+  \cvRoleBreak
+  \jobentry{Smart Contract Exposure}{Consulting / Game Development}{}{}
+  \begin{cvitems}
+    \item Worked with Solidity through Clovr Labs consulting and independent blockchain-game development
+  \end{cvitems}
+
+  \cvRoleBreak
+  \jobentry{Open-source Systems}{Independent, Remote}{May 2018 -- Present}{}
+  \begin{cvitems}
+    \item Built QueryFabric, a Rust SQL/SyQL compiler and data-portability layer; validated export/import, tamper detection, replay, and rollback in end-to-end NixOS VM tests
+    \item Authored 180 GitHub pull requests in the 2026-07-17 snapshot across Nixpkgs, Kameo, Bevy, LLVM, libp2p, and scientific Python
+  \end{cvitems}
+
+  \cvRoleBreak
+  \jobentry{Stateful and Distributed Systems}{Independent, Remote}{}{}
+  \begin{cvitems}
+    \item Building Chessbender, a cross-platform Rust/Bevy tactical game with replay, LAN/P2P networking, dice-commitment fairness, and state-hash desync detection
+    \item Designed reusable Nix/Rust infrastructure across Fleetix, Infernix, rs-harbor, nix-crossbow, and nix-provenance for fleet topology, AI inference, cross-compilation, identity, and reproducible delivery
+  \end{cvitems}
+
+  \cvRoleBreak
+  \jobentry{Queryable Data Systems}{Independent, Remote}{}{}
+  \begin{cvitems}
+    \item Solo-designed and implemented Pink Raven, a rights-aware reference-search platform with semantic retrieval, embedding/reranking workflows, pgvector, data-residency controls, and NixOS deployment
+    \item Built Mnemo, a Rust AI-agent memory system combining temporal memory, vector/graph search, conversation mining, MCP, and integration hooks
+  \end{cvitems}
+
+  \cvRoleBreak
+  \jobentry{Testing and Developer Tooling}{Independent, Remote}{}{}
+  \begin{cvitems}
+    \item Built visual-rubric, a screenshot and interaction-rubric runner with parallel workers, batch reports, retries, and optional CI gating
+  \end{cvitems}
+
+  \cvRoleBreak
+  \jobentry{Scientific Software}{Independent / Academic}{}{}
+  \begin{cvitems}
+    \item Developed Rust/Python tooling for markerless 3D tracking and reconstruction, behavior analysis, Poisson reconstruction, mesh processing, media extraction, and typed NumPy/Pydantic workflows
+  \end{cvitems}
+}
+
+\newcommand{\EnglishAIGamingExperience}{%
+  \section{Work Experience}
+  \jobentry{Indie Game Developer}{Self Employed, Remote}{Nov 2025 -- Present}{}
+  \begin{cvitems}
+    \item Designing Kingpin, a Rust/Bevy card game for Web/WASM, Steam, and Web3 distribution
+    \item Building Chessbender, a strategy game with custom P2P networking (kamenet/kamebevy, Tokio)
+  \end{cvitems}
+
+  \cvRoleBreak
+  \jobentry{Senior Software Engineer - Lead}{Clovr Labs, Remote}{Aug 2023 -- Present}{}
+  \begin{cvitems}
+    \item Lead Solana/Bitcoin analytics and API delivery; built Rust/Tokio ETL with backpressure, graceful shutdown, Docker, Kubernetes, and CI/CD
+    \item Integrated and operated Geth/Reth and LND/Bitcoin Core payment flows, handling nonce, fee, replacement, and confirmation reliability, RPC/process failures, retries, routing/liquidity failures, restarts, and reconciliation; tested Polar scenarios and used Foundry for smart contracts
+    \item Built real-time Solana base-layer ingestion and optimized approximately 200 TB of ClickHouse derived-fact storage with slot/commitment tracking, backfills, deduplication, fork correction, and query/storage tuning
+  \end{cvitems}
+
+  \cvRoleBreak
+  \jobentry{FOSS Project Author (Volunteer)}{Open Source, Remote}{May 2018 -- Present}{}
+  \begin{cvitems}
+    \item Solo-designed and implemented Pink Raven, owning product direction and AI architecture for model evaluation, embedding/reranking, worker protocol, data residency, and curator UX
+    \item Built Mnemo AI-agent memory with Tokio/Axum, SurrealDB, MCP/REST, and WASM/IndexedDB
+  \end{cvitems}
+
+  \cvRoleBreak
+  \jobentry{Software Engineer and Researcher}{Haberl Laboratory, Berlin}{Aug 2020 -- Aug 2023}{}
+  \begin{cvitems}
+    \item Built \href{https://syndb.xyz}{SynDB} in Rust (Tokio, Axum, Arrow Flight, Kameo), federating 100+ TB across 15 EM facilities
+    \item Designed data-sovereign federation with concurrent Arrow Flight ingestion and partial-failure handling
+    \item Delivered behavior-analysis tooling for 3 Ph.D.\ projects; mentored junior engineers/interns
+  \end{cvitems}
+
+}
+
+\newcommand{\NorwegianGenericExperience}{%
+  \section{Arbeidserfaring}
+  \jobentry{Senior dataingeni{\o}r / faglig leder}{Clovr Labs, remote}{Aug 2023 -- n{\aa}}{}
+  \begin{cvitems}
+    \item Leder Solana-analyse i et nytt R\&D-prosjekt for risikodata, analyse og API-leveranser
+    \item Bygget backend for Bitcoin- og Solana-risikoforensikk for \href{https://scoremycrypto.com/}{ScoreMyCrypto} (\href{https://scoremycrypto.com/api/v4/docs\#}{B2B API}), brukt av politi og kryptomarkedsplattformer
+    \item Leverer produksjons-ETL i Rust/Tokio med backpressure, kontrollert nedstenging, Docker/Kubernetes og CI/CD
+    \item Integrerte og opererte Geth/Reth-execution-klienter for betalingspålitelighet, med nonce-koordinering, EIP-1559-gebyrer, transaksjonserstatning, konfigurerbare bekreftelsesgrenser, mempool-/RPC-edge cases, reorg-gjenoppretting og RPC-/prosessfeil; overvåket Geth-helse og brukte Rust-basert Foundry-verktøy til smartkontrakter
+    \item Integrerte LND via gRPC med Bitcoin Core; implementerte retries, rutings-/likviditetssjekker, duplikat- og utløpsbeskyttelse, omstartsgjenoppretting og tilstandsomstemming; diagnostiserte via RPC-svar, logger, kanaltilstand og on-chain-analyse; testet flere LND-noder i Polar
+    \item Bygget sanntidsingest fra Solanas base layer og optimaliserte omtrent 200 TB ClickHouse-lagring for avledede fakta, med slot-/commitment-sporing, backfills, deduplisering, fork-korrigering og ytelsesoptimalisering
+  \end{cvitems}
+
+  \cvRoleBreak
+  \jobentry{Dataingeni{\o}r og forsker}{Haberl Laboratory, Berlin}{Aug 2020 -- Aug 2023}{}
+  \begin{cvitems}
+    \item Bygget \href{https://syndb.xyz}{SynDB} i Rust (Tokio, Axum, Arrow Flight, Kameo), en f{\o}derert dataplattform p{\aa} 100+ TB for 15 EM-fasiliteter
+    \item Designet f{\o}derering for institusjonell datasuverenitet, delvis feil, parallell ingest og Arrow Flight-streaming
+    \item Leverte automatisert analyseverkt{\o}y for atferdsdata brukt av 3 samtidige ph.d.-prosjekter
+    \item Veiledet juniorutviklere og praktikanter
+  \end{cvitems}
+
+  \cvRoleBreak
+  \jobentry{\AA{}pen kildekode-utvikler (frivillig)}{\AA{}pen kildekode, remote}{Mai 2018 -- n{\aa}}{}
+  \begin{cvitems}
+    \item Vedlikeholder biblioteker p{\aa} \href{https://github.com/caniko}{GitHub} og \href{https://codeberg.org/caniko}{Codeberg}; bidrar til Nixpkgs med flakes, crane og fenix
+    \item Designet og implementerte alene Pink Raven, et rettighetsbevisst referansebibliotek for arkitektteam med semantisk s{\o}k, embedding-/reranking-flyt, pgvector og NixOS-deploy
+    \item Eide b{\aa}de produktretning og KI-arkitektur: modellvalg/evaluering, outbox-worker, data-residency-kontroller og kuratorarbeidsflyter
+    \item Bygget Mnemo, grafminne for AI-agenter med Tokio/Axum, SurrealDB, MCP/REST, stdio/SSE og WASM/IndexedDB
+    \item Har plattformbidrag innen LLVM BTF/LTO, Rust-verkt{\o}y og XDG Desktop Portal
+  \end{cvitems}
+
+  \cvRoleBreak
+  \jobentry{Spillutvikler}{Selvstendig, remote}{Nov 2025 -- n{\aa}}{}
+  \begin{cvitems}
+    \item Kingpin: multiplattform kortspill i Rust/Bevy for Web/WASM, Steam og Web3-distribusjon
+    \item Chessbender: strategispill med egen P2P-nettverksstack (kamenet/kamebevy, Tokio)
+  \end{cvitems}
+
+  \cvRoleBreak
+  \jobentry{Dataingeni{\o}r}{Mnemonic, Oslo}{Mai 2020 -- Aug 2020}{}
+  \begin{cvitems}
+    \item Var med p{\aa} {\aa} etablere et team for informasjonssikkerhetsverkt{\o}y i Oslo
+    \item Leverte sikkerhetsmetrikker for interne team og kunder, med vekt p{\aa} sporbarhet og leveransekvalitet
+  \end{cvitems}
+}
+
+\newcommand{\EnglishSkills}{%
+  \section{Skills}
+  \noindent
+  \cvSkillsTableStart
+  \begin{tabularx}{\dimexpr\textwidth-3pt}{@{}l X@{}}
+    \textbf{Rust/Backend}  & Tokio, Axum, Arrow Flight, Kameo, tower, REST APIs, ETL, distributed systems \\
+    \textbf{Data/AI}       & PostgreSQL, ClickHouse, SurrealDB, pgvector, embeddings, reranking, vector/graph search, MCP \\
+    \textbf{Blockchain/Nodes} & Ethereum clients (Geth/Reth), EVM transaction lifecycle, Solana base-layer ingestion, Bitcoin Core, LND/gRPC, Foundry \\
+    \textbf{Platform}      & Nix/NixOS, Kubernetes, Docker, CI/CD, OpenTofu/IaC, cross-compilation, sccache-dist \\
+    \textbf{Languages}     & Rust, Python, Go, Nix, TypeScript, SQL, LaTeX \\
+    \textbf{Fluent spoken} & English, Norwegian, Turkish \\
+  \end{tabularx}
+  \cvSkillsTableEnd
+}
+
+\newcommand{\EnglishAIGamingSkills}{%
+  \section{Skills}
+  \noindent
+  \cvSkillsTableStart
+  \begin{tabularx}{\dimexpr\textwidth-3pt}{@{}l X@{}}
+    \textbf{Backend/API}    & Rust, Tokio, Axum, REST, ETL, distributed systems, partial-failure handling \\
+    \textbf{AI/Data}        & Embeddings, reranking, model evaluation, pgvector, AI-agent memory, SurrealDB \\
+    \textbf{Blockchain/Game}& Solana, EVM transaction reliability, Geth/Reth, Bitcoin Core, LND/gRPC, Foundry, Bevy, Web3/P2P \\
+    \textbf{Infra}          & Linux/NixOS, Kubernetes, Docker, CI/CD, Nix, OpenTofu/IaC \\
+    \textbf{Fluent spoken}  & English, Norwegian, Turkish \\
+  \end{tabularx}
+  \cvSkillsTableEnd
+}
+
+\newcommand{\EnglishProtocolSkills}{%
+  \section{Skills}
+  \noindent
+  \cvSkillsTableStart
+  \begin{tabularx}{\dimexpr\textwidth-3pt}{@{}l X@{}}
+    \textbf{Rust/Systems}     & Rust, Tokio, Axum, Kameo, async ETL/services, concurrency, backpressure, graceful shutdown \\
+    \textbf{Blockchain}      & Geth/Reth, EVM transaction lifecycle, nonce/gas/EIP-1559, mempool/RPC edge cases, reorg recovery, LND/gRPC, Bitcoin Core, Polar, Solidity exposure \\
+    \textbf{Storage/Data}    & TiKV (RocksDB-backed), ClickHouse, derived-fact storage, partitioning/order keys, materialized views, ETL, Arrow Flight, provenance \\
+    \textbf{Quality/Platform}& End-to-end NixOS VM tests, CI/CD, Kubernetes, Docker, Nix/NixOS, cross-compilation \\
+    \textbf{Fluent spoken}   & English, Norwegian, Turkish \\
+  \end{tabularx}
+  \cvSkillsTableEnd
+}
+
+\newcommand{\NorwegianGenericSkills}{%
+  \section{Kompetanse}
+  \noindent
+  \cvSkillsTableStart
+  \begin{tabularx}{\dimexpr\textwidth-3pt}{@{}l X@{}}
+    \textbf{Programmering} & Rust, Python, Go, Nix, TypeScript, SQL, LaTeX \\
+    \textbf{Backend/data} & Tokio, Axum, Arrow Flight, SurrealDB, pgvector, ETL, API-er, distribuerte systemer \\
+    \textbf{Blokkjede/noder} & Geth/Reth, EVM-transaksjoner, Solana base layer, Bitcoin Core, LND/gRPC, Foundry, Polar \\
+    \textbf{KI/data} & Embeddings, reranking, modell-evaluering, semantisk s{\o}k, AI-agentminne \\
+    \textbf{Infra/DevOps} & Linux/NixOS, Docker, Kubernetes, CI/CD, OpenTofu/IaC, Git, sccache-dist \\
+    \textbf{Frontend-n{\ae}rt} & TypeScript, Web/WASM, API-integrasjon, produktn{\ae}r utvikling \\
+    \textbf{Spr{\aa}k} & Norsk, engelsk og tyrkisk flytende \\
+  \end{tabularx}
+  \cvSkillsTableEnd
+}

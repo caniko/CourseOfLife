@@ -1,0 +1,118 @@
+% Shared CV style and macros.
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1.8cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usepackage{charter}
+\usepackage{microtype}
+\usepackage{ifthen}
+\usepackage{background}
+\usepackage{needspace}
+
+\pagestyle{empty}
+\pdfgentounicode=1
+
+\definecolor{framecolor}{HTML}{C9A96E}
+\definecolor{headingcolor}{HTML}{333333}
+\definecolor{bodycolor}{HTML}{444444}
+
+\color{bodycolor}
+\setlength{\parindent}{0pt}
+
+\newlength{\cvSectionBefore}
+\newlength{\cvSectionAfter}
+\newlength{\cvSectionRuleLift}
+\newlength{\cvRuleToBodyGap}
+\newlength{\cvHeaderBottomGap}
+\newlength{\cvRoleGap}
+\newlength{\cvEducationGap}
+\newlength{\cvEntryNoteGap}
+\newlength{\cvContactLineGap}
+\newlength{\cvRhythmUnit}
+\newlength{\cvRhythmPhi}
+\newlength{\cvRhythmPhiSquared}
+\newcommand{\cvSkillsRowStretch}{1.20}
+
+\setlength{\cvRhythmUnit}{3pt}
+\setlength{\cvRhythmPhi}{4.8pt}
+\setlength{\cvRhythmPhiSquared}{7.8pt}
+
+\setlength{\cvSectionBefore}{\cvRhythmPhiSquared}
+\setlength{\cvSectionAfter}{0pt}
+\setlength{\cvSectionRuleLift}{-6pt}
+\setlength{\cvRuleToBodyGap}{\cvRhythmUnit}
+\setlength{\cvHeaderBottomGap}{\cvRhythmPhi}
+\setlength{\cvRoleGap}{\cvRhythmPhi}
+\setlength{\cvEducationGap}{\cvRhythmPhi}
+\setlength{\cvEntryNoteGap}{2pt}
+\setlength{\cvContactLineGap}{2pt}
+
+\newcommand{\cvContactBreak}{\\[\cvContactLineGap]}
+\newcommand{\cvEntryNoteBreak}{\\[\cvEntryNoteGap]}
+\newcommand{\cvRoleBreak}{\par\addvspace{\cvRoleGap}}
+\newcommand{\cvEducationBreak}{\par\addvspace{\cvEducationGap}}
+\newcommand{\cvSkillsTableStart}{\renewcommand{\arraystretch}{\cvSkillsRowStretch}}
+\newcommand{\cvSkillsTableEnd}{\renewcommand{\arraystretch}{1.0}}
+\newcommand{\cvSubsectionSeparator}{\textcolor{framecolor}{\enspace\vrule width 0.45pt height 1.15ex depth 0.15ex\enspace}}
+\newcommand{\cvSubsectionHeader}[3]{%
+  \par\noindent
+  {\bfseries\color{headingcolor}#1}\cvSubsectionSeparator{\color{bodycolor}#2}%
+  \hfill{\itshape\color{bodycolor}#3}%
+}
+
+\newlist{cvitems}{itemize}{1}
+\setlist[cvitems]{label=\textbullet, leftmargin=1.5em, itemsep=0pt, topsep=1.8pt, parsep=0pt, partopsep=0pt}
+
+\titleformat{\section}
+  {\large\scshape\color{headingcolor}}
+  {}
+  {0pt}
+  {}
+  [\vspace{\cvSectionRuleLift}\rule{\textwidth}{0.4pt}\vspace{\cvRuleToBodyGap}]
+\titlespacing{\section}{0pt}{\cvSectionBefore}{\cvSectionAfter}
+
+\setcounter{secnumdepth}{0}
+
+\newcommand{\jobentry}[4]{%
+  \cvSubsectionHeader{#1}{#2}{#3}%
+  \ifthenelse{\equal{#4}{}}{}{\cvEntryNoteBreak\noindent#4}%
+}
+
+\newcommand{\eduentry}[4]{%
+  \cvSubsectionHeader{#1}{#2~|~#3}{#4}%
+}
+
+\newcommand{\cvHeader}[2]{%
+  \begin{center}
+    {\fontsize{28}{34}\selectfont\scshape\color{headingcolor} Can H. Tartanoglu}\cvEntryNoteBreak
+    {\normalsize\scshape #1}\cvEducationBreak
+    \rule{0.6\textwidth}{0.4pt}\cvRoleBreak
+    {\footnotesize #2}
+  \end{center}
+  \vspace{\cvHeaderBottomGap}
+}
+
+\backgroundsetup{
+  scale=1,
+  color=framecolor,
+  opacity=1,
+  angle=0,
+  position=current page.center,
+  vshift=0cm,
+  hshift=0cm,
+  contents={%
+    \tikz[overlay,remember picture]
+      \draw[framecolor, line width=1.5pt]
+        ([shift={(0.8cm,-0.8cm)}]current page.north west)
+        rectangle
+        ([shift={(-0.8cm,0.8cm)}]current page.south east);
+  }
+}
