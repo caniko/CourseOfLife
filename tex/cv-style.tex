@@ -14,7 +14,6 @@
 \usepackage{charter}
 \usepackage{microtype}
 \usepackage{ifthen}
-\usepackage{background}
 \usepackage{needspace}
 
 \pagestyle{empty}
@@ -100,19 +99,12 @@
   \vspace{\cvHeaderBottomGap}
 }
 
-\backgroundsetup{
-  scale=1,
-  color=framecolor,
-  opacity=1,
-  angle=0,
-  position=current page.center,
-  vshift=0cm,
-  hshift=0cm,
-  contents={%
-    \tikz[overlay,remember picture]
+\AddToHook{shipout/background}{%
+  \put(0,-\paperheight){%
+    \begin{tikzpicture}
+      \useasboundingbox (0,0) rectangle (\paperwidth,\paperheight);
       \draw[framecolor, line width=1.5pt]
-        ([shift={(0.8cm,-0.8cm)}]current page.north west)
-        rectangle
-        ([shift={(-0.8cm,0.8cm)}]current page.south east);
-  }
+        (0.8cm,0.8cm) rectangle (\paperwidth-0.8cm,\paperheight-0.8cm);
+    \end{tikzpicture}%
+  }%
 }
