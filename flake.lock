@@ -56,7 +56,7 @@
       "inputs": {
         "flake-compat": "flake-compat",
         "nixpkgs": [
-          "tex-harbor",
+          "harbor-tex",
           "nixpkgs"
         ]
       },
@@ -78,7 +78,7 @@
       "inputs": {
         "flake-parts": "flake-parts",
         "nixpkgs": [
-          "tex-harbor",
+          "harbor-tex",
           "nixpkgs"
         ]
       },
@@ -86,7 +86,7 @@
         "lastModified": 1787508202,
         "narHash": "sha256-+Ason9Fexdg0bnuCdb0iqPkpsg4w84VaESyGe8UiM8M=",
         "ref": "trunk",
-        "rev": "6518fb096376d72944336a2fbe41cb9853f0231d",
+        "rev": "dc6c8a37ea272ee90ab67a4c85ed06d15a777e29",
         "revCount": 8,
         "type": "git",
         "url": "https://github.com/caniko/harbor-meta.git"
@@ -97,13 +97,42 @@
         "url": "https://github.com/caniko/harbor-meta.git"
       }
     },
+    "harbor-tex": {
+      "inputs": {
+        "git-hooks": "git-hooks",
+        "harbor-meta": "harbor-meta",
+        "meta-harbor": [
+          "harbor-tex",
+          "harbor-meta"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "nixpkgs-darwin": "nixpkgs-darwin",
+        "treefmt-nix": "treefmt-nix"
+      },
+      "locked": {
+        "lastModified": 1787918136,
+        "narHash": "sha256-htR/o5xf/iZwtiWqPiynDljoswcM8o7mx1MGofBDHlY=",
+        "ref": "trunk",
+        "rev": "4078e32b46f5cb495f0e555dc2df18ae9e826845",
+        "revCount": 17,
+        "type": "git",
+        "url": "https://github.com/caniko/harbor-tex.git"
+      },
+      "original": {
+        "ref": "trunk",
+        "type": "git",
+        "url": "https://github.com/caniko/harbor-tex.git"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1782723713,
-        "narHash": "sha256-oPXCU/SSUokcGaJREHibG1CBX3+s/W7orDWQOZDsEeQ=",
+        "lastModified": 1789546076,
+        "narHash": "sha256-zVxLZiSnmaaPLwnhj7pwmqe3axBg/C6nG5JZsJMh2g4=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "b5aa0fbd538984f6e3d201be0005b4463d8b09f8",
+        "rev": "b1b875982b17dabde9b4a37f3e229e74913e6db3",
         "type": "github"
       },
       "original": {
@@ -147,8 +176,8 @@
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs",
-        "tex-harbor": "tex-harbor"
+        "harbor-tex": "harbor-tex",
+        "nixpkgs": "nixpkgs"
       }
     },
     "systems": {
@@ -166,39 +195,10 @@
         "type": "github"
       }
     },
-    "tex-harbor": {
-      "inputs": {
-        "git-hooks": "git-hooks",
-        "harbor-meta": "harbor-meta",
-        "meta-harbor": [
-          "tex-harbor",
-          "harbor-meta"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "nixpkgs-darwin": "nixpkgs-darwin",
-        "treefmt-nix": "treefmt-nix"
-      },
-      "locked": {
-        "lastModified": 1787508487,
-        "narHash": "sha256-uZvwlZcAQovGxFJDqWM7HlXT8sQ7s4qpJ0TcetE3Z9A=",
-        "ref": "trunk",
-        "rev": "18d2711d2f5ad71edfe2290104fb352bcca3bf81",
-        "revCount": 16,
-        "type": "git",
-        "url": "https://github.com/caniko/harbor-tex.git"
-      },
-      "original": {
-        "ref": "trunk",
-        "type": "git",
-        "url": "https://github.com/caniko/harbor-tex.git"
-      }
-    },
     "treefmt-nix": {
       "inputs": {
         "nixpkgs": [
-          "tex-harbor",
+          "harbor-tex",
           "nixpkgs"
         ]
       },

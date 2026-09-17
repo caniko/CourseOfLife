@@ -4,18 +4,18 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    tex-harbor = {
+    harbor-tex = {
       url = "git+https://github.com/caniko/harbor-tex.git?ref=trunk";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   outputs =
-    { nixpkgs, flake-utils, tex-harbor, ... }:
+    { nixpkgs, flake-utils, harbor-tex, ... }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs { inherit system; };
-        cv = tex-harbor.lib.mkLatexDocument {
+        cv = harbor-tex.lib.mkLatexDocument {
           inherit pkgs;
           name = "cv";
           src = ./.;
@@ -36,7 +36,7 @@
           default = cv;
         };
         checks.cv = cv;
-        devShells.default = tex-harbor.lib.mkTexDevShell {
+        devShells.default = harbor-tex.lib.mkTexDevShell {
           inherit pkgs;
           profile = "cv";
         };
